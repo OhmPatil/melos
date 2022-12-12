@@ -1,8 +1,9 @@
-.container {
-}
+/* .container {
+} */
 
 .slider {
-  width: 100%;
+  /* Modify width to change entire image slider size */
+  /* width: 100%; */
   /* height: 400px; */
 }
 .slide,

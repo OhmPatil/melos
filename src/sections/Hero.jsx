@@ -62,7 +62,7 @@ function Hero() {
     <>
     <div className="w-screen h-[70%] flex justify-center items-center overflow-hidden">
     <div className="container md:w-screen h-full flex justify-center items-center overflow-hidden">
-      <div className="slider">
+      <div className="slider md:w-[90%] w-[80%]">
         <Slider ref={sliderRef}{...settings}>
           {songs.map((song, index) => (
             <div className={index === slideIndex ? "slide slide-active": 'slide'} key={song.title}>
