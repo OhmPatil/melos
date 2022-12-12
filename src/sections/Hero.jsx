@@ -15,7 +15,8 @@ import PlayerControls from "./PlayerControls";
 
 function Hero() {
 
-  const sliderRef = useRef(Slider)
+  const sliderRef = useRef()
+  console.log(sliderRef.current);
 
   const [slideIndex, setSlideIndex] = useState(0)
 
@@ -54,9 +55,15 @@ function Hero() {
     ]
   };
 
-  useEffect(() => {
-    console.log(slideIndex);
-  }, [slideIndex])
+  const nextSlide = () => {
+    const getSlider = sliderRef.current
+    getSlider.slickNext()
+  };
+
+  const prevSlide = () => {
+    const getSlider = sliderRef.current
+    getSlider.slickPrev()
+  }
 
   return (
     <>
@@ -75,7 +82,7 @@ function Hero() {
       </div>
     </div>
   </div>
-  <PlayerControls song={songs[slideIndex]} nextClick={sliderRef.current.slickNext} prevClick={sliderRef.current.slickPrev}/>
+  <PlayerControls song={songs[slideIndex]} nextClick={nextSlide} prevClick={prevSlide}/>
   </>
   );
 }
