@@ -79,7 +79,7 @@ function PlayerControls(props) {
             <img src={skipForward} alt="" />
           </button>
       </div>
-      <div className='md:w-[15%] w-[70%] flex gap-4'>
+      <div className='invisible md:visible md:w-[15%] w-[70%] flex gap-4'>
         <img src={volume} alt="" />
         <Slider onChange={onVolChange} percentage={volPercent}/>
       </div>

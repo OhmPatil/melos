@@ -15,7 +15,7 @@ import PlayerControls from "./PlayerControls";
 
 function Hero() {
 
-  const slider = useRef(Slider)
+  const sliderRef = useRef(Slider)
 
   const [slideIndex, setSlideIndex] = useState(0)
 
@@ -60,10 +60,10 @@ function Hero() {
 
   return (
     <>
-    <div className="w-[100vw] flex justify-center items-center">
+    <div className="w-[100vw] flex justify-center items-center overflow-hidden">
     <div className="container">
       <div className="slider">
-        <Slider ref={slider}{...settings}>
+        <Slider ref={sliderRef}{...settings}>
           {songs.map((song, index) => (
             <div className={index === slideIndex ? "slide slide-active": 'slide'} key={song.title}>
               <img src={song.image} alt="" />
@@ -75,7 +75,7 @@ function Hero() {
       </div>
     </div>
   </div>
-  <PlayerControls song={songs[slideIndex]} nextClick={slider.current.slickNext} prevClick={slider.current.slickPrev}/>
+  <PlayerControls song={songs[slideIndex]} nextClick={sliderRef.current.slickNext} prevClick={sliderRef.current.slickPrev}/>
   </>
   );
 }
