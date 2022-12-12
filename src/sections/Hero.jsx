@@ -60,8 +60,8 @@ function Hero() {
 
   return (
     <>
-    <div className="w-[100vw] flex justify-center items-center overflow-hidden">
-    <div className="container">
+    <div className="w-screen h-[70%] flex justify-center items-center overflow-hidden">
+    <div className="container md:w-screen h-full flex justify-center items-center">
       <div className="slider">
         <Slider ref={sliderRef}{...settings}>
           {songs.map((song, index) => (

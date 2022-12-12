@@ -60,7 +60,7 @@ function PlayerControls(props) {
   }
   
   return (
-    <div className='h-[20vh] w-screen fixed bottom-0 px-6 flex flex-col justify-center items-center gap-6'>
+    <div className='md:h-[20%] h-fit w-screen fixed bottom-0 px-6 flex flex-col justify-center items-center gap-6'>
       <Slider onChange={onProgChange} percentage={progPercent}/>
       <audio ref={audioRef} src={props.song.music}
         onLoadedData = {(event) => {
