@@ -7,7 +7,7 @@ import PlayerControls from './sections/PlayerControls'
 function App() {
 
   return (
-    <div className="App md:h-screen">
+    <div className="App md:h-screen py-6 md:py-0">
       <Header/>
       <Hero/>
     </div>
