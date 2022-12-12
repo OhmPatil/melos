@@ -7,7 +7,7 @@ import PlayerControls from './sections/PlayerControls'
 function App() {
 
   return (
-    <div className="App">
+    <div className="App md:h-screen">
       <Header/>
       <Hero/>
     </div>

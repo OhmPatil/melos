@@ -7,8 +7,9 @@ function Header() {
         <div className='w-1/3 pl-8 font-semibold text-4xl invisible md:visible text-[#A5C1FF]'>
           Melos
         </div>
-        <div className='w-1/3 flex justify-center text-xl md:text-2xl'>
-          Now Playing
+        <div className='w-1/3 h-fit flex flex-col items-center justify-center gap-1 text-xl md:text-2xl'>
+          <p className='md:hidden text-3xl font-semibold text-[#A5C1FF]'>Melos</p>
+          <p>Now Playing</p>
         </div>
         <div className='w-1/3 flex justify-end items-center gap-6 pr-8 invisible md:visible'>
           <div>Collections</div>
