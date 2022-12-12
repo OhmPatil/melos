@@ -3,7 +3,7 @@ import '../styles/header.css'
 
 function Header() {
   return (
-    <header className='h-fit md:h-[10vh] flex justify-center items-center text-2xl text-white'>
+    <header className='h-fit md:h-[10vh] w-screen flex justify-center items-center text-2xl text-white'>
         <div className='w-1/3 pl-8 font-semibold text-4xl invisible md:visible text-[#A5C1FF]'>
           Melos
         </div>
