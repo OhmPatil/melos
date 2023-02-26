@@ -3,23 +3,19 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/hero.css";
-import img1 from "../assets/1.jpg";
-import img2 from "../assets/2.jpg";
-import img3 from "../assets/3.jpg";
-import img4 from "../assets/4.jpg";
-import img5 from "../assets/5.jpg";
-import songs from "../utils/dummySongs";
 import PlayerControls from "./PlayerControls";
+import shuffleArray from '../utils/shuffleArray'
 
-// const images = [img1, img2, img3, img4, img5];
+function Hero({songs}) {
 
-function Hero() {
-
+  console.log(songs);
   const sliderRef = useRef()
-  console.log(sliderRef.current);
-
   const [slideIndex, setSlideIndex] = useState(0)
 
+  useEffect(() => {
+    shuffleArray(songs)
+  }, [])
+  
   const settings = {
     centerMode: true,
     infinite: true,
@@ -64,7 +60,7 @@ function Hero() {
     const getSlider = sliderRef.current
     getSlider.slickPrev()
   }
-
+  
   return (
     <>
     <div className="w-screen h-[70%] flex justify-center items-center overflow-hidden">
@@ -72,17 +68,17 @@ function Hero() {
       <div className="slider md:w-[90%] w-[80%]">
         <Slider ref={sliderRef}{...settings}>
           {songs.map((song, index) => (
-            <div className={index === slideIndex ? "slide slide-active": 'slide'} key={song.title}>
+            <div className={index === slideIndex ? "slide slide-active": 'slide'} key={song.name}>
               <img src={song.image} alt="" />
-              <div className="text-center text-white text-3xl font-semibold mt-6">{song.title}</div>
-              <div className="text-center text-white text-opacity-80 text-xl">{song.artist}</div>
+              <div className="text-center text-white text-3xl font-semibold mt-6">{song.name}</div>
+              <div className="text-center text-white text-opacity-80 text-xl">{song.artists[0].name}</div>
             </div>
           ))}
         </Slider>
       </div>
     </div>
   </div>
-  <PlayerControls song={songs[slideIndex]} nextClick={nextSlide} prevClick={prevSlide}/>
+  {/* <PlayerControls song={songs[slideIndex]} nextClick={nextSlide} prevClick={prevSlide}/> */}
   </>
   );
 }
