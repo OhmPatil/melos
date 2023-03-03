@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Hero from "../src/sections/Hero";
-import Header from "../src/sections/Header";
-import useAuth from "../src/hooks/useAuth";
+import Hero from "../sections/Hero";
+import Header from "../sections/Header";
+import useAuth from "../hooks/useAuth";
 import SpotifyWebApi from "spotify-web-api-node";
-import PlayerControls from "../src/sections/PlayerControls";
-import Player from "../src/components/Player";
+import PlayerControls from "../sections/PlayerControls";
+import Player from "../components/Player";
 // import { Sidebar } from "flowbite-react";
-import Sidebar from "../src/components/Sidebar";
-import AlbumCard from "../src/components/AlbumCard";
+import Sidebar from "../components/Sidebar";
+import AlbumCard from "../components/AlbumCard";
 
 // Initialise API with clientID
 const spotifyApi = new SpotifyWebApi({
@@ -17,8 +17,8 @@ const spotifyApi = new SpotifyWebApi({
 function Dashboard({ code, token }) {
   // Getting accessToken from useAuth hook
 
-  const accessToken = useAuth(code)
-  // const accessToken = window.localStorage.getItem("token")
+  // const accessToken = useAuth(code)
+  const accessToken = window.localStorage.getItem("token")
 
   // Initializing states
   const [newReleases, setNewReleases] = useState([]);
