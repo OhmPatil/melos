@@ -43,5 +43,6 @@ export default function useAuth(code) {
     return () => clearInterval(interval)
   }, [refreshToken, expiresIn])
 
+  window.localStorage.setItem('token', accessToken)
   return accessToken
 }
